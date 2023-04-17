@@ -41,18 +41,18 @@ MYLIBS= -ldl -lreadline -lhistory -lncurses
 LIBS = -lm
 
 CORE_T=	liblua.a
-CORE_O=	lapi.o lcode.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o lmem.o \
-	lobject.o lopcodes.o lparser.o lstate.o lstring.o ltable.o ltm.o  \
-	lundump.o lvm.o lzio.o ltests.o
+CORE_O=	lapi.o lcode.o lctype.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o \
+	lmem.o lobject.o lopcodes.o lparser.o lstate.o lstring.o ltable.o \
+	ltm.o lundump.o lvm.o lzio.o ltests.o
 AUX_O=	lauxlib.o
 LIB_O=	lbaselib.o ldblib.o liolib.o lmathlib.o loslib.o ltablib.o lstrlib.o \
-	loadlib.o linit.o
+	loadlib.o lcorolib.o linit.o lbitlib.o
 
 LUA_T=	lua
 LUA_O=	lua.o
 
-LUAC_T=	luac
-LUAC_O=	luac.o print.o
+#LUAC_T=	luac
+#LUAC_O=	luac.o print.o
 
 ALL_T= $(CORE_T) $(LUA_T) $(LUAC_T)
 ALL_O= $(CORE_O) $(LUA_O) $(LUAC_O) $(AUX_O) $(LIB_O)
